@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
                         @Override
                         public void run() {
 
-                            Calendar c = Calendar.getInstance(); //for date.
+                            Calendar c = Calendar.getInstance(); //for date
                             SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
                             String formattedDate = df.format(c.getTime());
                             TextView colourTextView = (TextView)findViewById(R.id.colourTextView);
