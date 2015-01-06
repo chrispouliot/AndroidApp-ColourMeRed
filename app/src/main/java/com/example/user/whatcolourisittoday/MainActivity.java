@@ -41,10 +41,10 @@ public class MainActivity extends ActionBarActivity {
                             colourTextView.setText(formattedDate);
 
                             String newFormattedDate = formattedDate.replace(":", ""); // for hex
-                            SimpleDateFormat bf = new SimpleDateFormat("HHmmss"); //for hex
-                            TextView hexView = (TextView)findViewById(R.id.hexView); //for hex
+                            SimpleDateFormat bf = new SimpleDateFormat("HHmmss"); 
+                            TextView hexView = (TextView)findViewById(R.id.hexView); 
                             int hex = Integer.parseInt(newFormattedDate); //for hex string->int
-                            hexView.setText("#"+hex); //for hex
+                            hexView.setText("#"+hex); 
 
                             String hex1 = Integer.toString(hex); //turn hex from int->String for parseColor
                             RelativeLayout colourChange = (RelativeLayout)findViewById(R.id.background);
