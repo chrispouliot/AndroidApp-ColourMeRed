@@ -43,9 +43,14 @@ public class MainActivity extends ActionBarActivity {
                             String newFormattedDate = formattedDate.replace(":", ""); // for hex
                             SimpleDateFormat bf = new SimpleDateFormat("HHmmss"); //for hex
                             TextView hexView = (TextView)findViewById(R.id.hexView); //for hex
-                            int hex = Integer.parseInt(newFormattedDate); //for hex string->int
-                            hexView.setText("#"+hex); //for hex
+                            int stringLength = newFormattedDate.length();
+                            if(stringLength==5) // this fixes 1am-9am being only 5 characters long
+                                {
+                                    newFormattedDate = "0"+newFormattedDate;
+                                }
 
+                            int hex = Integer.parseInt(newFormattedDate);
+                            hexView.setText("#"+hex); //for hex
                             String hex1 = Integer.toString(hex); //turn hex from int->String for parseColor
                             RelativeLayout colourChange = (RelativeLayout)findViewById(R.id.background);
                             colourChange.setBackgroundColor(Color.parseColor("#"+hex1)); //parseColor here only accepts strings, so we changed hex1 int->String
